@@ -1,0 +1,9 @@
+//- Journal
+section#journal.journal.section
+  .container
+    +section-head('From the journal')
+      | Notes on process, case studies and things that inspire us.
+
+    .journal-grid
+      each post in posts
+        +journal-card(post)

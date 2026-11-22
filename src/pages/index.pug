@@ -1,0 +1,31 @@
+extends ../layouts/main
+
+block title
+  title #{site.name} | #{site.tagline}
+
+//- append: додаємо до базових meta (charset, viewport) SEO та Open Graph
+append meta
+  meta(name="description" content=site.description)
+  meta(property="og:type" content="website")
+  meta(property="og:title" content=`${site.name} | ${site.tagline}`)
+  meta(property="og:description" content=site.description)
+  meta(property="og:locale" content="en_GB")
+
+//- prepend: preload CSS шрифтів має йти ДО самого <link rel="stylesheet">
+prepend styles
+  link(rel="preload" as="style" href=site.fontsUrl)
+
+block content
+  include ../components/header
+
+  main
+    include ../components/sections/hero
+    include ../components/sections/works
+    include ../components/sections/cta
+    include ../components/sections/services
+    include ../components/sections/stats
+    include ../components/sections/clients
+    include ../components/sections/journal
+
+  include ../components/footer
+  include ../components/to-top

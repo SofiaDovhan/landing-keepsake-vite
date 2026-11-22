@@ -1,0 +1,31 @@
+header.header
+  .container.header-container
+    a.logo(href="#top", aria-label=`${site.name} - home`)
+      span.logo-mark(aria-hidden="true")= site.name.charAt(0)
+      span.logo-text(aria-hidden="true")= site.name.slice(1)
+
+    button.burger-btn(type="button", popovertarget="main-nav", popovertargetaction="toggle", aria-controls="main-nav", aria-expanded="false", aria-label="Menu")
+      +icon('burger')
+      +icon('close')
+
+    nav#main-nav.nav(popover, aria-label="Main")
+      ul.nav-list
+        each item in nav
+          li.nav-item
+            //- умови: клас active та aria-current лише для активного пункту
+            a.nav-link(href=item.href, class={ active: item.active }, aria-current=item.active ? 'page' : false)
+              | #{item.label}
+              +icon('chevron', 6, 11)(class="nav-chevron")
+
+      .nav-actions
+        +btn('Contact us', '#contact')(class="nav-mobile-btn")
+          +icon('mail')
+        button.btn-favourites(type="button", aria-label="Favourites")
+          +icon('heart')
+          span.btn-fav-text Favourites
+
+      .mobile-nav-info
+        p.mobile-nav-info-label Say hello
+        a.mobile-nav-info-text(href=`mailto:${site.email}`)= site.email
+        a.mobile-nav-info-text(href=`tel:${site.phoneHref}`)= site.phone
+        +socials()(class="nav-socials")

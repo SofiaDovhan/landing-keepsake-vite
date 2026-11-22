@@ -1,0 +1,8 @@
+//- Stats
+section.stats.section
+  .container
+    .stats-grid
+      each stat in stats
+        .stat-item
+          p.stat-number= stat.value
+          p.stat-label= stat.label

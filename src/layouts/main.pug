@@ -1,0 +1,25 @@
+doctype html
+
+//- Міксини та дані підключаються один раз у макеті — вони доступні в усіх блоках сторінок
+include ../mixins/index
+include ../data/index
+
+html(lang="en")
+  head
+    block meta
+      include ../includes/meta
+
+    block title
+      title= site.name
+
+    block styles
+      include ../includes/fonts
+      link(rel="stylesheet" href="/src/styles/main.scss")
+
+  body#top
+    include ../includes/svg-sprite
+
+    block content
+    
+    block scripts
+      script(type="module" src="/src/scripts/main.js")

@@ -1,0 +1,44 @@
+//- +icon(name, width, height)(class="…")
+//- Спрайтові іконки (heart, plus, mail, chevron) виводяться через <use>,
+//- решта — інлайн-SVG. Вибір гілки — через case/when.
+mixin icon(name, w, h)
+  - const sprite = { heart: [16, 14.4], plus: [16, 16], mail: [14, 10], chevron: [5, 9] }
+  - const dim = sprite[name] || []
+  - const iw = w || dim[0]
+  - const ih = h || dim[1]
+  case name
+    when 'heart'
+    when 'plus'
+    when 'mail'
+    when 'chevron'
+      svg(width=iw, height=ih, aria-hidden="true")&attributes(attributes)
+        use(href=`#icon-${name}`)
+    when 'burger'
+      svg.icon-burger(width="22" height="16" viewBox="0 0 22 16" fill="currentColor" aria-hidden="true")&attributes(attributes)
+        rect(y="0" width="22" height="2")
+        rect(y="7" width="22" height="2")
+        rect(y="14" width="22" height="2")
+    when 'close'
+      svg.icon-close(width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true")&attributes(attributes)
+        path(d="M1 1l14 14M15 1L1 15")
+    when 'check'
+      svg(width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)
+        path(d="M1 3.5l2.8 2.5L9 1")
+    when 'arrow-up'
+      svg(width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)
+        path(d="M6 14V2M1 7l5-5 5 5")
+    when 'monitor'
+      svg(width="42" height="30" viewBox="0 0 42 30" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)
+        rect(x="1" y="1" width="40" height="22")
+        path(d="M21 23v5M13 29h16")
+    when 'motion'
+      svg(width="40" height="32" viewBox="0 0 40 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)
+        rect(x="1" y="7" width="38" height="24")
+        path(d="M12 1l8 6 8-6")
+    when 'print'
+      svg(width="42" height="34" viewBox="0 0 42 34" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)
+        path(d="M11 17V1h20v16")
+        rect(x="1" y="17" width="40" height="16")
+        path(d="M11 25h20")
+    default
+      - throw new Error(`+icon: unknown icon "${name}"`)

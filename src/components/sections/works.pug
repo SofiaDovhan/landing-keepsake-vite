@@ -1,0 +1,20 @@
+//- Works
+section#works.works.section
+  .container
+    //- радіокнопки й чипси генеруються з одного масиву filters;
+    //- порядок сиблінгів (radio → .works-head → .works-grid) важливий для :checked ~
+    each f in filters
+      input.filter-radio(type="radio", name="portfolio-filter", id=`filter-${f.id}`, checked=f.checked)
+
+    .works-head
+      h2.section-title Our awesome works
+      .filter-chips
+        each f in filters
+          label.chip(for=`filter-${f.id}`)= f.label
+
+    .works-grid
+      each work, i in works
+        +work-card(work, i)
+
+    .load-more
+      +btn('Load more works', null, 'secondary')(class="btn-load-more")

@@ -1,0 +1,6 @@
+//- +section-head(title) + вкладений текст (block) → опис секції
+mixin section-head(title)
+  h2.section-title= title
+  if block
+    p.section-desc
+      block

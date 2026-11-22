@@ -1,0 +1,17 @@
+//- +picture(name, alt, options)
+//- Адаптивне зображення: AVIF → WebP → JPEG, srcset за ширинами.
+//- Файли очікуються у src/assets/images/ за схемою: <name>-<ширина>.<avif|webp|jpg>
+//-   напр. work-01-400.avif, work-01-800.webp, work-01-800.jpg
+//- options: widths, sizes, width, height, eager, cls
+mixin picture(name, alt, opts)
+  - const o = Object.assign({ widths: [400, 800], sizes: '(min-width: 768px) 358px, 100vw', width: 358, height: 282, eager: false, cls: 'card-img' }, opts || {})
+  - const dir = '/src/assets/images'
+  - const srcset = (ext) => o.widths.map((w) => `${dir}/${name}-${w}.${ext} ${w}w`).join(', ')
+  picture
+    source(type="image/avif", srcset=srcset('avif'), sizes=o.sizes)
+    source(type="image/webp", srcset=srcset('webp'), sizes=o.sizes)
+    //- loading="lazy" для всіх, крім зображень першого екрана (eager)
+    unless o.eager
+      img(class=o.cls, src=`${dir}/${name}-${o.widths[0]}.jpg`, srcset=srcset('jpg'), sizes=o.sizes, alt=alt, width=o.width, height=o.height, loading="lazy", decoding="async")&attributes(attributes)
+    else
+      img(class=o.cls, src=`${dir}/${name}-${o.widths[0]}.jpg`, srcset=srcset('jpg'), sizes=o.sizes, alt=alt, width=o.width, height=o.height)&attributes(attributes)
