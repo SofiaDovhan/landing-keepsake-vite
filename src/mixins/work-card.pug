@@ -3,9 +3,9 @@ mixin work-card(work, i = 1)
   - const label = work.category.charAt(0).toUpperCase() + work.category.slice(1)
   article.work-card(data-category=work.category, tabindex="0")
     +picture(work.image, work.alt, { eager: i === 0 })
-    .hover-overlay
-      span.plus-icon(aria-hidden="true")
+    .work-card__overlay
+      span.work-card__plus(aria-hidden="true")
         +icon('plus', 16, 16)
-      h3.card-title= work.title
-      .card-divider
-      span.card-cat= label
+      h3.work-card__title= work.title
+      .work-card__divider
+      span.work-card__cat= label

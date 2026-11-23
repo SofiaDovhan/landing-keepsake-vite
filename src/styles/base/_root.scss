@@ -1,0 +1,30 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+// Токени з map-ів -> CSS custom properties
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $stack in $fonts {
+    --font-#{$name}: #{$stack};
+  }
+
+  @each $name, $steps in $layout {
+    --#{$name}: #{map.get($steps, base)};
+  }
+}
+
+// Адаптивні значення токенів (mobile first)
+@each $bp in (md, lg) {
+  @include mq($bp) {
+    :root {
+      @each $name, $steps in $layout {
+        @if map.has-key($steps, $bp) {
+          --#{$name}: #{map.get($steps, $bp)};
+        }
+      }
+    }
+  }
+}

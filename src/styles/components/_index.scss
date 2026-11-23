@@ -1,0 +1,22 @@
+// Порядок важливий: .btn має йти раніше за блоки, що його перевизначають (nav, newsletter)
+@forward 'btn';
+@forward 'section-title';
+@forward 'section-desc';
+@forward 'logo';
+@forward 'burger';
+@forward 'nav';
+@forward 'mobile-nav-info';
+@forward 'fav-btn';
+@forward 'chip';
+@forward 'socials';
+@forward 'work-card';
+@forward 'service-card';
+@forward 'stat';
+@forward 'author';
+@forward 'dots';
+@forward 'testimonial';
+@forward 'journal-card';
+@forward 'read-more';
+@forward 'newsletter';
+@forward 'to-top';
+@forward 'svg-sprite';

@@ -4,7 +4,7 @@
 //-   напр. work-01-400.avif, work-01-800.webp, work-01-800.jpg
 //- options: widths, sizes, width, height, eager, cls
 mixin picture(name, alt, opts)
-  - const o = Object.assign({ widths: [400, 800], sizes: '(min-width: 768px) 358px, 100vw', width: 358, height: 282, eager: false, cls: 'card-img' }, opts || {})
+  - const o = Object.assign({ widths: [400, 800], sizes: '(min-width: 768px) 358px, 100vw', width: 358, height: 282, eager: false, cls: 'work-card__img' }, opts || {})
   - const dir = '/src/assets/images'
   - const srcset = (ext) => o.widths.map((w) => `${dir}/${name}-${w}.${ext} ${w}w`).join(', ')
   picture

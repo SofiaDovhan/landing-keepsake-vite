@@ -3,7 +3,7 @@
 //-   variant → модифікатор: primary | secondary
 //-   block   → вкладений вміст (напр. іконка) виводиться перед підписом
 mixin btn(label, href, variant = 'primary')
-  - const cls = ['btn', `btn-${variant}`]
+  - const cls = ['btn', `btn--${variant}`]
   //- пробіл між іконкою та текстом — як у lab-07
   - const gap = block ? ' ' : ''
   if href

@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &__avatar {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    font-family: var(--font-oswald);
+    font-size: rem(17);
+  }
+
+  &__name {
+    @include oswald;
+    font-size: rem(14);
+    line-height: 21px;
+    color: var(--color-text-dark);
+  }
+
+  &__role {
+    margin-top: 2px;
+    font-size: rem(13);
+    line-height: 18px;
+    color: var(--color-muted);
+  }
+}

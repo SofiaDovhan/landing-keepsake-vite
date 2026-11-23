@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.services {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+
+    @include mq(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

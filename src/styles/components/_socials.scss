@@ -1,0 +1,36 @@
+@use '../abstracts' as *;
+
+.socials {
+  display: flex;
+  gap: 10px;
+
+  &__link {
+    @include flex-center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: rem(12);
+    line-height: 16px;
+    color: var(--color-white);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  @include mq(md) {
+    gap: 8px;
+  }
+
+  @include mq(lg) {
+    gap: 10px;
+  }
+}
+
+// Модифікатори кольору для кожної мережі
+@each $network in $social-networks {
+  .socials__link--#{$network} {
+    background-color: var(--color-social-#{$network});
+  }
+}

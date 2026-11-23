@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.hero {
+  padding: 40px 0;
+  background-color: var(--color-bg-light);
+
+  &__title {
+    @include oswald(300, 3px);
+    margin-bottom: 14px;
+    font-size: rem(26);
+    line-height: 1.25;
+    color: var(--color-text-dark);
+
+    @include mq(md) {
+      font-size: rem(32);
+    }
+
+    @include mq(lg) {
+      font-size: rem(40);
+    }
+  }
+
+  &__desc {
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mq(md) {
+      flex-direction: row;
+      gap: 12px;
+    }
+  }
+
+  @include mq(md) {
+    padding: 52px 0;
+  }
+
+  @include mq(lg) {
+    padding: 64px 0;
+  }
+}

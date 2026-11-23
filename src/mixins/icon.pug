@@ -14,12 +14,12 @@ mixin icon(name, w, h)
       svg(width=iw, height=ih, aria-hidden="true")&attributes(attributes)
         use(href=`#icon-${name}`)
     when 'burger'
-      svg.icon-burger(width="22" height="16" viewBox="0 0 22 16" fill="currentColor" aria-hidden="true")&attributes(attributes)
+      svg(width="22" height="16" viewBox="0 0 22 16" fill="currentColor" aria-hidden="true")&attributes(attributes)
         rect(y="0" width="22" height="2")
         rect(y="7" width="22" height="2")
         rect(y="14" width="22" height="2")
     when 'close'
-      svg.icon-close(width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true")&attributes(attributes)
+      svg(width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true")&attributes(attributes)
         path(d="M1 1l14 14M15 1L1 15")
     when 'check'
       svg(width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true")&attributes(attributes)

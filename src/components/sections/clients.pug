@@ -7,19 +7,19 @@ section.clients.section
     +section-head('Clients kind words')
       | Some of the teams that trusted us with their brands.
 
-    ul.client-logos
+    ul.clients__logos
       each client in clients
-        li.client-logo(class=`logo-${client.slug}`)= client.name
+        li.clients__logo(class=`clients__logo--${client.slug}`)= client.name
 
     blockquote.testimonial
-      span.quote-mark(aria-hidden="true") “
-      p.testimonial-text= testimonial.quote
-      footer.testimonial-author
-        .author-info
-          .author-avatar(aria-hidden="true")= initials
-          .author-details
-            p.author-name= testimonial.name
-            p.author-role= testimonial.role
-        .slider-dots(aria-hidden="true")
+      span.testimonial__mark(aria-hidden="true") “
+      p.testimonial__text= testimonial.quote
+      footer.testimonial__footer
+        .author
+          .author__avatar(aria-hidden="true")= initials
+          .author__details
+            p.author__name= testimonial.name
+            p.author__role= testimonial.role
+        .dots(aria-hidden="true")
           each dot, i in Array.from({ length: testimonial.slides })
-            span.dot(class={ active: i === 0 })
+            span.dots__item(class={ 'dots__item--active': i === 0 })

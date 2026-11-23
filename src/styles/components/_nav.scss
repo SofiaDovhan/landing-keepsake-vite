@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+.nav {
+  position: fixed;
+  inset: var(--header-height) 0 0 0;
+  width: auto;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  padding: 12px 0 0;
+  border: 0;
+  overflow-y: auto;
+  background-color: var(--color-white);
+  color: inherit;
+
+  &:popover-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--container-padding);
+
+    @include mq(md) {
+      flex-direction: row;
+      gap: 24px;
+      padding: 0;
+    }
+
+    @include mq(lg) {
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--color-border);
+
+    @include mq(md) {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    @include oswald(300, 2px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-size: rem(28);
+    line-height: 36px;
+    color: var(--color-text-dark);
+
+    &:hover,
+    &--active {
+      color: var(--color-accent);
+    }
+
+    @include mq(md) {
+      padding: 0;
+      font-weight: 400;
+      font-size: rem(13);
+      line-height: 19px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__chevron {
+    color: var(--color-muted);
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px var(--container-padding) 59px;
+
+    @include mq(md) {
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  &__mobile-btn {
+    width: 100%;
+    height: 48px;
+
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  @include mq(md) {
+    position: static;
+    inset: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding: 0;
+    overflow: visible;
+    background-color: transparent;
+  }
+
+  @include mq(lg) {
+    gap: 40px;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 28px 24px;
+  background-color: var(--color-bg-light);
+
+  &__mark {
+    width: 29px;
+    height: 44px;
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+    font-size: rem(64);
+    line-height: 44px;
+    color: var(--color-accent);
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+
+    @include mq(md) {
+      font-size: rem(19);
+    }
+
+    @include mq(lg) {
+      font-size: rem(22);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include mq(md) {
+    padding: 40px 48px;
+  }
+}

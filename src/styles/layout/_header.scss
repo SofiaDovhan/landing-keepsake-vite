@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: map.get($z-index, header);
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

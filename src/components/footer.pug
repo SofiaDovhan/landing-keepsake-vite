@@ -1,19 +1,19 @@
 footer#contact.footer
   .container
-    .footer-top
+    .footer__top
       include ./newsletter
 
-      .footer-links
+      .footer__links
         each col in footerColumns
-          .footer-col
-            h2.footer-heading= col.title
-            ul.footer-list
+          .footer__col
+            h2.footer__heading= col.title
+            ul.footer__list
               each link in col.links
                 li
-                  a(href=link.href)= link.label
+                  a.footer__link(href=link.href)= link.label
 
-    .footer-divider
+    .footer__divider
 
-    .footer-bottom
-      p.copyright #{site.year} #{site.name}. All rights reserved.
+    .footer__bottom
+      p.footer__copyright #{site.year} #{site.name}. All rights reserved.
       +socials()

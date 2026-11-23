@@ -1,0 +1,5 @@
+// Єдина точка входу. Порядок = порядок у каскаді.
+@use 'base';
+@use 'layout';
+@use 'components';
+@use 'sections';

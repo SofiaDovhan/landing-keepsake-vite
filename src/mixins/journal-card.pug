@@ -1,11 +1,11 @@
 mixin journal-card(post)
   article.journal-card
-    .journal-thumb
+    .journal-card__thumb
       //- декоративне зображення → порожній alt
-      +picture(post.image, '', { widths: [150, 300], sizes: '150px', width: 150, height: 150, cls: null })
-    .journal-content
-      p.journal-meta #{post.date} #{post.category}
-      h3.journal-title= post.title
+      +picture(post.image, '', { widths: [150, 300], sizes: '150px', width: 150, height: 150, cls: 'journal-card__img' })
+    .journal-card__content
+      p.journal-card__meta #{post.date} #{post.category}
+      h3.journal-card__title= post.title
       if post.excerpt
-        p.journal-excerpt= post.excerpt
+        p.journal-card__excerpt= post.excerpt
       a.read-more(href=post.href || '#') Read more #[+icon('chevron', 5, 9)]

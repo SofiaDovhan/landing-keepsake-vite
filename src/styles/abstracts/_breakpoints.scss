@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$breakpoints: (
+  md: 768px,
+  lg: 1280px,
+);
+
+// Mobile first: лише min-width
+@mixin mq($bp) {
+  @if not map.has-key($breakpoints, $bp) {
+    @error 'Unknown breakpoint `#{$bp}`. Available: #{map.keys($breakpoints)}';
+  }
+
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}

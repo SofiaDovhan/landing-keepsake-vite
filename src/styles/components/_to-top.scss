@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+.to-top {
+  @include flex-center;
+  position: fixed;
+  right: var(--container-padding);
+  bottom: 24px;
+  z-index: map.get($z-index, to-top);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+  }
+}

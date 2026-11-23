@@ -1,0 +1,15 @@
+.dots {
+  display: flex;
+  gap: 8px;
+
+  &__item {
+    width: 8px;
+    height: 4px;
+    background-color: var(--color-dot);
+
+    &--active {
+      width: 24px;
+      background-color: var(--color-accent);
+    }
+  }
+}

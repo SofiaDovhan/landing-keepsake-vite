@@ -1,20 +1,20 @@
-.newsletter-block
-  h2.footer-heading Newsletter
-  p.newsletter-desc Fresh case studies and design notes, once a month.
+.newsletter
+  h2.footer__heading Newsletter
+  p.newsletter__desc Fresh case studies and design notes, once a month.
 
-  form.newsletter-form(action="#newsletter-success", method="get")
-    .field-row
+  form.newsletter__form(action="#newsletter-success", method="get")
+    .newsletter__row
       label.visually-hidden(for="newsletter-email") Email address
-      input#newsletter-email.input-field(type="email", name="email", placeholder="Your email address", required, aria-describedby="email-error")
-      +btn('Subscribe', null, 'primary')(type="submit", class="btn-subscribe")
-    p#email-error.field-error Please enter a valid email address.
-    .consent-row
-      input#consent-check.consent-checkbox(type="checkbox", name="consent", required)
-      label.consent-text(for="consent-check") I agree to the privacy policy
+      input#newsletter-email.newsletter__input(type="email", name="email", placeholder="Your email address", required, aria-describedby="email-error")
+      +btn('Subscribe', null, 'primary')(type="submit", class="newsletter__submit")
+    p#email-error.newsletter__error Please enter a valid email address.
+    .newsletter__consent
+      input#consent-check.newsletter__checkbox(type="checkbox", name="consent", required)
+      label.newsletter__consent-label(for="consent-check") I agree to the privacy policy
 
-  #newsletter-success.newsletter-success(role="status")
-    span.success-check(aria-hidden="true")
+  #newsletter-success.newsletter__success(role="status")
+    span.newsletter__check(aria-hidden="true")
       +icon('check')
     p You're in! Check your inbox to confirm.
 
-  p.newsletter-note One email a month. No spam, unsubscribe anytime.
+  p.newsletter__note One email a month. No spam, unsubscribe anytime.

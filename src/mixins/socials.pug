@@ -1,5 +1,5 @@
-//- +socials()(class="nav-socials") — блок соцмереж із даних socialLinks
+//- +socials()(class="mobile-nav-info__socials") — блок соцмереж із даних socialLinks
 mixin socials()
   .socials&attributes(attributes)
     each s in socialLinks
-      a.social-icon(href=s.href, class=`social-${s.slug}`, aria-label=s.label)= s.text
+      a.socials__link(href=s.href, class=`socials__link--${s.slug}`, aria-label=s.label)= s.text

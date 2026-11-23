@@ -1,0 +1,43 @@
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Параметри за замовчуванням
+@mixin focus-ring($color: var(--color-teal), $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+@mixin flex-center($inline: false) {
+  @if $inline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  align-items: center;
+  justify-content: center;
+}
+
+// Заголовки / підписи шрифтом Oswald
+@mixin oswald($weight: 400, $spacing: 1.5px, $uppercase: true) {
+  font-family: var(--font-oswald);
+  font-weight: $weight;
+  letter-spacing: $spacing;
+
+  @if $uppercase {
+    text-transform: uppercase;
+  }
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+}

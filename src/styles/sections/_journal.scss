@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.journal {
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mq(lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+    }
+  }
+}
