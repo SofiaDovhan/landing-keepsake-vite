@@ -1,9 +1,10 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 // Активний стан чипа керується радіокнопками (див. sections/_works.scss)
 .chip {
   @include flex-center($inline: true);
   @include oswald(400, 1px);
+
   flex-shrink: 0;
   height: 34px;
   padding: 0 16px;

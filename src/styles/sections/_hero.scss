@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .hero {
   padding: 40px 0;
@@ -6,6 +6,7 @@
 
   &__title {
     @include oswald(300, 3px);
+
     margin-bottom: 14px;
     font-size: rem(26);
     line-height: 1.25;

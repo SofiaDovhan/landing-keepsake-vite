@@ -1,8 +1,9 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .fav-btn {
   @include flex-center;
   @include oswald(400, 1px);
+
   gap: 8px;
   width: 100%;
   height: 48px;

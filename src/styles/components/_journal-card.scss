@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .journal-card {
   display: flex;
@@ -33,6 +33,7 @@
 
   &__meta {
     @include oswald(400, 1px);
+
     font-size: rem(12);
     line-height: 18px;
     color: var(--color-muted);
@@ -40,6 +41,7 @@
 
   &__title {
     @include oswald;
+
     font-size: rem(15);
     line-height: 21px;
     color: var(--color-text-dark);

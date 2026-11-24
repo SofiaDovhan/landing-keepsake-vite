@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .work-card {
   position: relative;
@@ -15,6 +15,7 @@
 
   &__overlay {
     @include flex-center;
+
     position: absolute;
     inset: 0;
     flex-direction: column;
@@ -32,6 +33,7 @@
 
   &__plus {
     @include flex-center;
+
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -41,6 +43,7 @@
 
   &__title {
     @include oswald;
+
     font-size: rem(17);
     line-height: 25px;
     color: var(--color-white);

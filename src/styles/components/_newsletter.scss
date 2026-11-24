@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .newsletter {
   display: flex;
@@ -107,6 +107,7 @@
 
   &__check {
     @include flex-center;
+
     flex-shrink: 0;
     width: 24px;
     height: 24px;

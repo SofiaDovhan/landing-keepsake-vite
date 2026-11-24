@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .service-card {
   display: flex;
@@ -8,6 +8,7 @@
 
   &__icon {
     @include flex-center;
+
     width: 72px;
     height: 72px;
     margin-bottom: 14px;
@@ -23,6 +24,7 @@
 
   &__title {
     @include oswald;
+
     margin-bottom: 14px;
     font-size: rem(15);
     line-height: 22px;

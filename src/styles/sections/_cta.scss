@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .cta {
   &__inner {
@@ -11,6 +11,7 @@
 
   &__title {
     @include oswald(300, 3px);
+
     font-size: rem(22);
     line-height: 30px;
     color: var(--color-text-dark);

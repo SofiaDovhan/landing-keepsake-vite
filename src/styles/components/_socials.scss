@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .socials {
   display: flex;
@@ -6,6 +6,7 @@
 
   &__link {
     @include flex-center;
+
     width: 34px;
     height: 34px;
     border-radius: 50%;

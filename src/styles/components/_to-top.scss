@@ -1,8 +1,9 @@
-@use 'sass:map';
-@use '../abstracts' as *;
+@use "sass:map";
+@use "../abstracts" as *;
 
 .to-top {
   @include flex-center;
+
   position: fixed;
   right: var(--container-padding);
   bottom: 24px;

@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .nav {
   position: fixed;
@@ -45,6 +45,7 @@
 
   &__link {
     @include oswald(300, 2px);
+
     display: flex;
     align-items: center;
     justify-content: space-between;

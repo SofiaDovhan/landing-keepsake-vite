@@ -1,5 +1,5 @@
-@use 'sass:list';
-@use '../abstracts' as *;
+@use "sass:list";
+@use "../abstracts" as *;
 
 $filter-ids: list.join(all, $work-categories, $separator: comma);
 
@@ -28,6 +28,7 @@ $filter-ids: list.join(all, $work-categories, $separator: comma);
 
   &__chips {
     @include hide-scrollbar;
+
     display: flex;
     gap: 8px;
     overflow-x: auto;
@@ -74,42 +75,52 @@ $filter-ids: list.join(all, $work-categories, $separator: comma);
 // ---- Фільтр портфоліо на :checked ~ (без id у селекторах: radio знаходиться за [value]) ----
 
 @each $id in $filter-ids {
-  .works__radio[value='#{$id}']:checked ~ .works__head .chip[for='filter-#{$id}'] {
+  .works__radio[value="#{$id}"]:checked
+    ~ .works__head
+    .chip[for="filter-#{$id}"] {
     border-color: var(--color-accent);
     background-color: var(--color-accent);
     color: var(--color-white);
   }
 
-  .works__radio[value='#{$id}']:focus-visible ~ .works__head .chip[for='filter-#{$id}'] {
+  .works__radio[value="#{$id}"]:focus-visible
+    ~ .works__head
+    .chip[for="filter-#{$id}"] {
     @include focus-ring;
   }
 }
 
 @each $category in $work-categories {
-  .works__radio[value='#{$category}']:checked
+  .works__radio[value="#{$category}"]:checked
     ~ .works__grid
-    .work-card:not([data-category='#{$category}']) {
+    .work-card:not([data-category="#{$category}"]) {
     display: none;
   }
 }
 
 // «All»: на mobile показуємо 5 карток, на md — 8, на lg — усі
-.works__radio[value='all']:checked ~ .works__grid .work-card:nth-child(n + 6) {
+.works__radio[value="all"]:checked ~ .works__grid .work-card:nth-child(n + 6) {
   display: none;
 }
 
 @include mq(md) {
-  .works__radio[value='all']:checked ~ .works__grid .work-card:nth-child(n + 6) {
+  .works__radio[value="all"]:checked
+    ~ .works__grid
+    .work-card:nth-child(n + 6) {
     display: block;
   }
 
-  .works__radio[value='all']:checked ~ .works__grid .work-card:nth-child(n + 9) {
+  .works__radio[value="all"]:checked
+    ~ .works__grid
+    .work-card:nth-child(n + 9) {
     display: none;
   }
 }
 
 @include mq(lg) {
-  .works__radio[value='all']:checked ~ .works__grid .work-card:nth-child(n + 9) {
+  .works__radio[value="all"]:checked
+    ~ .works__grid
+    .work-card:nth-child(n + 9) {
     display: block;
   }
 }

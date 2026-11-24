@@ -1,8 +1,9 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .btn {
   @include flex-center($inline: true);
   @include oswald(400, 1px);
+
   gap: 8px;
   height: 40px;
   padding: 0 20px;
